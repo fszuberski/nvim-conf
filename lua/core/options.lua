@@ -33,8 +33,6 @@ opt.undofile = true
 opt.swapfile = false
 opt.backup = false
 
-opt.colorcolumn = "80"
-
 opt.hlsearch = false
 opt.incsearch = true
 
