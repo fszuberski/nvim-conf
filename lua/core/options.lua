@@ -1,0 +1,46 @@
+local opt = vim.opt
+local g = vim.g
+
+opt.showmode = true
+opt.laststatus = 3 -- global statusline
+
+opt.title = true
+opt.clipboard = "unnamedplus"
+opt.cul = true -- cursor line
+
+opt.number = true
+opt.relativenumber = true
+
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.smartindent = true
+opt.tabstop = 4
+opt.softtabstop = 4
+
+opt.wrap = false
+
+opt.fillchars = { eob = " " }
+opt.ignorecase = true
+opt.smartcase = true
+opt.mouse = "a"
+
+opt.signcolumn = "yes"
+opt.splitbelow = true
+opt.splitright = true
+opt.termguicolors = true
+opt.timeoutlen = 400
+opt.undofile = true
+opt.swapfile = false
+opt.backup = false
+
+opt.colorcolumn = "80"
+
+opt.hlsearch = false
+opt.incsearch = true
+
+opt.scrolloff = 16
+
+-- interval for writing swap file to disk, also used by gitsigns
+opt.updatetime = 50
+
+g.mapleader = " "
