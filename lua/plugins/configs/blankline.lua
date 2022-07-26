@@ -1,12 +1,8 @@
 local present, blankline = pcall(require, "indent_blankline")
-local opt = vim.opt
 
 if not present then
     return
 end
-
-opt.list = true
-opt.listchars:append("eol:↴")
 
 local options = {
     indentLine_enabled = 1,
