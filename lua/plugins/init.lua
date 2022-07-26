@@ -15,6 +15,22 @@ return require('packer').startup(function(use)
     }
 
     use {
+        "williamboman/mason.nvim",
+        config = function()
+            require "plugins.configs.mason"
+        end,
+
+    }
+
+
+    use {
+        'neovim/nvim-lspconfig',
+        config = function()
+            require "plugins.configs.lspconfig"
+        end,
+    }
+
+    use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         config = function()

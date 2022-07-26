@@ -4,6 +4,9 @@ local vnoremap = Remap.vnoremap
 local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 
+local lsp = vim.lsp.buf
+local diagnostic = vim.diagnostic
+
 -- navigate within insert mode
 inoremap("<A-h>", "<Left>")
 inoremap("<A-l>", "<Right>")
@@ -29,8 +32,22 @@ nnoremap("<leader>wl", "<C-w>l")
 nnoremap("<leader>wj", "<C-w>j")
 nnoremap("<leader>wk", "<C-w>k")
 
+
 -- nvim-tree
 nnoremap("<leader>tt", "<cmd> NvimTreeToggle <CR>")
 nnoremap("<leader>tf", "<cmd> NvimTreeFocus <CR>")
 nnoremap("<leader>to", "<cmd> NvimTreeFindFile <CR>")
+
+-- lsp
+nnoremap("K", function() lsp.hover() end)
+nnoremap("gD", function() lsp.declaration() end)
+nnoremap("gd", function() lsp.definition() end)
+nnoremap("gi", function() lsp.implementation() end)
+nnoremap("gr", function() lsp.references() end)
+nnoremap("<leader>rn", function() lsp.rename() end)
+nnoremap("<leader>fc", function() lsp.formatting() end)
+nnoremap("<leader>sh", function() lsp.signature_help() end)
+nnoremap("<leader>td", function() lsp.type_definition() end)
+nnoremap("<leader>ca", function() lsp.code_action() end)
+nnoremap("<leader>sd", function() diagnostic.open_float() end)
 
