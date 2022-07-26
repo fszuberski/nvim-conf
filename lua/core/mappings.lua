@@ -32,6 +32,12 @@ nnoremap("<leader>wl", "<C-w>l")
 nnoremap("<leader>wj", "<C-w>j")
 nnoremap("<leader>wk", "<C-w>k")
 
+-- bufferline
+nnoremap("<TAB>", "<cmd> BufferLineCycleNext <CR>")
+nnoremap("<S-TAB>", "<cmd> BufferLineCyclePrev <CR>")
+nnoremap("<leader>bn", "<cmd> BufferLineMoveNext <CR>")
+nnoremap("<leader>bp", "<cmd> BufferLineMovePrev <CR>")
+nnoremap("<leader>wq", "<cmd> bdelete <CR>")
 
 -- nvim-tree
 nnoremap("<leader>tt", "<cmd> NvimTreeToggle <CR>")

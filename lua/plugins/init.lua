@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make'
+        run = 'make',
     }
 
     use {
@@ -71,7 +71,16 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
             require "plugins.configs.lualine"
-        end
+        end,
+    }
+
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "v2.*",
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require "plugins.configs.bufferline"
+        end,
     }
 
 end)
