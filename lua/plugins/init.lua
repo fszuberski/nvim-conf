@@ -1,7 +1,7 @@
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+    use { 'wbthomason/packer.nvim' }
 
-    use 'folke/tokyonight.nvim'
+    use { 'folke/tokyonight.nvim' }
 
     use {
         'kyazdani42/nvim-tree.lua',
@@ -21,7 +21,6 @@ return require('packer').startup(function(use)
         end,
 
     }
-
 
     use {
         'neovim/nvim-lspconfig',
@@ -45,6 +44,20 @@ return require('packer').startup(function(use)
         end,
     }
 
-    use 'nvim-treesitter/playground'
+    use { 'nvim-treesitter/playground' }
+
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} },
+        cmd = "Telescope",
+        config = function()
+          require "plugins.configs.telescope"
+        end,
+    }
+
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make'
+    }
 
 end)

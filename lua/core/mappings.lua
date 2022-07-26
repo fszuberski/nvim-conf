@@ -51,3 +51,15 @@ nnoremap("<leader>td", function() lsp.type_definition() end)
 nnoremap("<leader>ca", function() lsp.code_action() end)
 nnoremap("<leader>sd", function() diagnostic.open_float() end)
 
+-- telescope
+nnoremap("<C-f>", "<cmd> Telescope current_buffer_fuzzy_find fuzzy=false case_mode=respect_case <CR>")
+nnoremap("<leader>fa", "<cmd> Telescope live_grep fuzzy=false case_mode=respect_case <CR>")
+nnoremap("<leader>fz", "<cmd> Telescope live_grep <CR>")
+nnoremap("<leader>fs", "<cmd> Telescope grep_string <CR>")
+nnoremap("<leader>ff", "<cmd> Telescope find_files <CR>")
+nnoremap("<leader>fv", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>")
+nnoremap("<leader>fb", "<cmd> Telescope buffers <CR>")
+nnoremap("<leader>fh", "<cmd> Telescope help_tags <CR>")
+nnoremap("<leader>fo", "<cmd> Telescope oldfiles <CR>")
+nnoremap("<leader>tk", "<cmd> Telescope keymaps <CR>")
+
