@@ -5,8 +5,8 @@ if not present then
 end
 
 local options = {
-      log_level = 'info',
-      auto_session_suppress_dirs = {'~/'}
+    log_level = 'info',
+    auto_session_suppress_dirs = { '~/' }
 }
 
 autosession.setup(options)

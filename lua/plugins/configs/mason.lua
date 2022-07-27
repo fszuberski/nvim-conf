@@ -15,4 +15,3 @@ local options = {
 }
 
 mason.setup(options)
-

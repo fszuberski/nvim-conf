@@ -7,15 +7,15 @@ end
 local options = {
     indentLine_enabled = 1,
     filetype_exclude = {
-      "help",
-      "terminal",
-      "alpha",
-      "packer",
-      "lspinfo",
-      "TelescopePrompt",
-      "TelescopeResults",
-      "lsp-installer",
-      "",
+        "help",
+        "terminal",
+        "alpha",
+        "packer",
+        "lspinfo",
+        "TelescopePrompt",
+        "TelescopeResults",
+        "lsp-installer",
+        "",
     },
     buftype_exclude = { "terminal" },
     show_trailing_blankline_indent = false,
@@ -25,4 +25,3 @@ local options = {
 }
 
 blankline.setup(options)
-

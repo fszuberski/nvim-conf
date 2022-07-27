@@ -6,7 +6,6 @@ local xnoremap = Remap.xnoremap
 
 local lsp = vim.lsp.buf
 local diagnostic = vim.diagnostic
-local gs = package.loaded.gitsigns
 
 -- navigate within insert mode
 inoremap("<A-h>", "<Left>")

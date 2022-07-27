@@ -6,11 +6,11 @@ return require('packer').startup(function(use)
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
-          'kyazdani42/nvim-web-devicons',
+            'kyazdani42/nvim-web-devicons',
         },
         cmd = { "NvimTreeToggle", "NvimTreeFocus" },
         config = function()
-          require "plugins.configs.nvimtree"
+            require "plugins.configs.nvimtree"
         end,
     }
 
@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         config = function()
-          require "plugins.configs.treesitter"
+            require "plugins.configs.treesitter"
         end,
     }
 
@@ -48,10 +48,10 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} },
+        requires = { { 'nvim-lua/plenary.nvim' } },
         cmd = "Telescope",
         config = function()
-          require "plugins.configs.telescope"
+            require "plugins.configs.telescope"
         end,
     }
 
