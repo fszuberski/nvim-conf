@@ -172,12 +172,20 @@ return require('packer').startup(function(use)
             require "plugins.configs.autopairs"
         end,
     }
-    use({
+    use {
         "glepnir/lspsaga.nvim",
         branch = "main",
         config = function()
             require "plugins.configs.lspsaga"
         end,
-    })
+    }
+
+    use {
+        "petertriho/nvim-scrollbar",
+        config = function()
+            require "plugins.configs.scrollbar"
+        end,
+
+    }
 
 end)
