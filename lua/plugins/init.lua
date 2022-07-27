@@ -158,4 +158,11 @@ return require('packer').startup(function(use)
         "onsails/lspkind.nvim"
     }
 
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require "plugins.configs.comment"
+        end
+    }
+
 end)
