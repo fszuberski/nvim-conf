@@ -159,10 +159,18 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'numToStr/Comment.nvim',
+        "numToStr/Comment.nvim",
         config = function()
             require "plugins.configs.comment"
         end
+    }
+
+    use {
+        "windwp/nvim-autopairs",
+        after = "nvim-cmp",
+        config = function()
+            require "plugins.configs.autopairs"
+        end,
     }
 
 end)
