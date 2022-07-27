@@ -7,6 +7,9 @@ local xnoremap = Remap.xnoremap
 local lsp = vim.lsp.buf
 local diagnostic = vim.diagnostic
 
+-- clear highlight after search
+nnoremap("<ESC>", "<cmd> noh <CR>")
+
 -- navigate within insert mode
 inoremap("<A-h>", "<Left>")
 inoremap("<A-l>", "<Right>")
@@ -47,15 +50,16 @@ nnoremap("<leader>to", "<cmd> NvimTreeFindFile <CR>")
 -- lsp
 nnoremap("K", function() lsp.hover() end)
 nnoremap("gD", function() lsp.declaration() end)
-nnoremap("gd", function() lsp.definition() end)
-nnoremap("gi", function() lsp.implementation() end)
-nnoremap("gr", function() lsp.references() end)
 nnoremap("<leader>rn", function() lsp.rename() end)
 nnoremap("<leader>fc", function() lsp.formatting() end)
 nnoremap("<leader>sh", function() lsp.signature_help() end)
-nnoremap("<leader>td", function() lsp.type_definition() end)
 nnoremap("<leader>ca", function() lsp.code_action() end)
 nnoremap("<leader>sd", function() diagnostic.open_float() end)
+-- basic remaps overridden by telescope; check 'telescope lsp'
+nnoremap("lgr", function() lsp.references() end)
+nnoremap("lgd", function() lsp.definition() end)
+nnoremap("lgi", function() lsp.implementation() end)
+nnoremap("<leader>ltd", function() lsp.type_definition() end)
 
 -- telescope
 nnoremap("<C-f>", "<cmd> Telescope current_buffer_fuzzy_find fuzzy=false case_mode=respect_case <CR>")
@@ -68,3 +72,8 @@ nnoremap("<leader>fb", "<cmd> Telescope buffers <CR>")
 nnoremap("<leader>fh", "<cmd> Telescope help_tags <CR>")
 nnoremap("<leader>fo", "<cmd> Telescope oldfiles <CR>")
 nnoremap("<leader>tk", "<cmd> Telescope keymaps <CR>")
+-- telescope lsp
+nnoremap("gr", "<cmd> Telescope lsp_references <CR>")
+nnoremap("gd", "<cmd> Telescope lsp_definitions <CR>")
+nnoremap("td", "<cmd> Telescope lsp_type_definitions <CR>")
+nnoremap("gi", "<cmd> Telescope lsp_implementations <CR>")

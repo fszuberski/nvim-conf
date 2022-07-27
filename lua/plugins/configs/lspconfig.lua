@@ -5,7 +5,6 @@ if not present then
     return
 end
 
--- require "plugins.configs.lsp-installer"
 require "plugins.configs.mason"
 
 local servers = { "html", "cssls" }
@@ -79,6 +78,13 @@ lspconfig.gopls.setup {
             staticcheck = true
         }
     }
+}
+
+-- https://github.com/lighttiger2505/sqls
+lspconfig.sqls.setup {
+    on_attach = M.on_attach,
+    capabilities = M.capabilities,
+    flags = M.flags,
 }
 
 lspconfig.yamlls.setup {
