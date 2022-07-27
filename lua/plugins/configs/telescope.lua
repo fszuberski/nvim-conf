@@ -53,6 +53,20 @@ local options = {
             n = { ["q"] = require("telescope.actions").close },
         },
     },
+    pickers = {
+        lsp_references = {
+            show_line = false
+        },
+        lsp_definitions = {
+            show_line = false
+        },
+        lsp_type_definitions = {
+            show_line = false
+        },
+        lsp_implementations = {
+            show_line = false
+        },
+    },
     extensions = {
         fzf = {
             fuzzy = true, -- false will only do exact matching
@@ -62,7 +76,6 @@ local options = {
             -- the default case_mode is "smart_case"
         }
     },
-
     extensions_list = { "fzf" },
 }
 

@@ -36,7 +36,7 @@ nnoremap("<leader>wj", "<C-w>j")
 nnoremap("<leader>wk", "<C-w>k")
 
 -- bufferline
-nnoremap("<TAB>", "<cmd> BufferLineCycleNext <CR>")
+nnoremap("<A-TAB>", "<cmd> BufferLineCycleNext <CR>")
 nnoremap("<S-TAB>", "<cmd> BufferLineCyclePrev <CR>")
 nnoremap("<leader>bn", "<cmd> BufferLineMoveNext <CR>")
 nnoremap("<leader>bp", "<cmd> BufferLineMovePrev <CR>")
@@ -56,9 +56,9 @@ nnoremap("<leader>sh", function() lsp.signature_help() end)
 nnoremap("<leader>ca", function() lsp.code_action() end)
 nnoremap("<leader>sd", function() diagnostic.open_float() end)
 -- basic remaps overridden by telescope; check 'telescope lsp'
-nnoremap("lgr", function() lsp.references() end)
-nnoremap("lgd", function() lsp.definition() end)
-nnoremap("lgi", function() lsp.implementation() end)
+nnoremap("tgr", function() lsp.references() end)
+nnoremap("tgd", function() lsp.definition() end)
+nnoremap("tgi", function() lsp.implementation() end)
 nnoremap("<leader>ltd", function() lsp.type_definition() end)
 
 -- telescope
