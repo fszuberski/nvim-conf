@@ -185,7 +185,12 @@ return require('packer').startup(function(use)
         config = function()
             require "plugins.configs.scrollbar"
         end,
-
     }
 
+    use {
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require "plugins.configs.colorizer"
+        end,
+    }
 end)
