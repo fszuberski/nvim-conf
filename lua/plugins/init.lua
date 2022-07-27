@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
@@ -46,6 +47,8 @@ return require('packer').startup(function(use)
 
     use { 'nvim-treesitter/playground' }
 
+
+    -- telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { { 'nvim-lua/plenary.nvim' } },
@@ -95,6 +98,64 @@ return require('packer').startup(function(use)
         config = function()
             require "plugins.configs.autosession"
         end,
+    }
+
+    -- cmp
+    use {
+        "hrsh7th/nvim-cmp",
+        after = "friendly-snippets",
+        config = function()
+            require "plugins.configs.cmp"
+        end,
+    }
+
+    use {
+        "rafamadriz/friendly-snippets",
+        module = "cmp_nvim_lsp",
+        event = "InsertEnter",
+    }
+
+    use {
+        "L3MON4D3/LuaSnip",
+        wants = "friendly-snippets",
+        after = "nvim-cmp",
+        config = function()
+            require "plugins.configs.luasnip"
+        end,
+    }
+
+    use {
+        "saadparwaiz1/cmp_luasnip",
+        after = "LuaSnip",
+    }
+
+    use {
+        "hrsh7th/cmp-nvim-lua",
+        after = "cmp_luasnip",
+    }
+
+    use {
+        "hrsh7th/cmp-nvim-lsp",
+        after = "cmp-nvim-lua",
+    }
+
+    use {
+        "hrsh7th/cmp-buffer",
+        after = "cmp-nvim-lsp",
+    }
+
+    use {
+        "hrsh7th/cmp-path",
+        after = "cmp-buffer",
+    }
+
+    use {
+        "hrsh7th/cmp-cmdline",
+        after = "cmp-buffer",
+    }
+
+    use {
+        "onsails/lspkind.nvim"
     }
 
 end)
