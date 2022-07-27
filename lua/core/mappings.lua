@@ -48,14 +48,15 @@ nnoremap("<leader>tf", "<cmd> NvimTreeFocus <CR>")
 nnoremap("<leader>to", "<cmd> NvimTreeFindFile <CR>")
 
 -- lsp
-nnoremap("K", function() lsp.hover() end)
 nnoremap("gD", function() lsp.declaration() end)
-nnoremap("<leader>rn", function() lsp.rename() end)
 nnoremap("<leader>fc", function() lsp.formatting() end)
-nnoremap("<leader>sh", function() lsp.signature_help() end)
-nnoremap("<leader>ca", function() lsp.code_action() end)
 nnoremap("<leader>sd", function() diagnostic.open_float() end)
--- basic remaps overridden by telescope; check 'telescope lsp'
+-- remaps overridden by lspsaga
+-- nnoremap("K", function() lsp.hover() end)
+-- nnoremap("<leader>rn", function() lsp.rename() end)
+-- nnoremap("<leader>sh", function() lsp.signature_help() end)
+-- nnoremap("<leader>ca", function() lsp.code_action() end)
+-- base remaps overridden by telescope; check 'telescope lsp'
 nnoremap("tgr", function() lsp.references() end)
 nnoremap("tgd", function() lsp.definition() end)
 nnoremap("tgi", function() lsp.implementation() end)
@@ -77,3 +78,10 @@ nnoremap("gr", "<cmd> Telescope lsp_references <CR>")
 nnoremap("gd", "<cmd> Telescope lsp_definitions <CR>")
 nnoremap("td", "<cmd> Telescope lsp_type_definitions <CR>")
 nnoremap("gi", "<cmd> Telescope lsp_implementations <CR>")
+
+-- lspsaga
+nnoremap("K", "<cmd> Lspsaga hover_doc <CR>")
+nnoremap("gh", "<cmd> Lspsaga lsp_finder <CR>")
+nnoremap("<leader>ca", "<cmd> Lspsaga code_action <CR>")
+nnoremap("<leader>sh", "<cmd> Lspsaga signature_help <CR>")
+nnoremap("<leader>rn", "<cmd> Lspsaga rename <CR>")

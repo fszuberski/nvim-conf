@@ -172,5 +172,12 @@ return require('packer').startup(function(use)
             require "plugins.configs.autopairs"
         end,
     }
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            require "plugins.configs.lspsaga"
+        end,
+    })
 
 end)
