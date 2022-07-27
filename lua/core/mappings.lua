@@ -6,6 +6,7 @@ local xnoremap = Remap.xnoremap
 
 local lsp = vim.lsp.buf
 local diagnostic = vim.diagnostic
+local gs = package.loaded.gitsigns
 
 -- navigate within insert mode
 inoremap("<A-h>", "<Left>")
@@ -68,4 +69,3 @@ nnoremap("<leader>fb", "<cmd> Telescope buffers <CR>")
 nnoremap("<leader>fh", "<cmd> Telescope help_tags <CR>")
 nnoremap("<leader>fo", "<cmd> Telescope oldfiles <CR>")
 nnoremap("<leader>tk", "<cmd> Telescope keymaps <CR>")
-
