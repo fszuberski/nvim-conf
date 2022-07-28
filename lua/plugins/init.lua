@@ -97,9 +97,9 @@ return require('packer').startup(function(use)
     use {
         'sindrets/diffview.nvim',
         requires = 'nvim-lua/plenary.nvim',
-         config = function()
-             require "plugins.configs.diffview"
-         end,
+        config = function()
+            require "plugins.configs.diffview"
+        end,
     }
 
     use {
@@ -200,6 +200,14 @@ return require('packer').startup(function(use)
         "norcalli/nvim-colorizer.lua",
         config = function()
             require "plugins.configs.colorizer"
+        end,
+    }
+
+    use {
+        "ThePrimeagen/harpoon",
+        requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            require "plugins.configs.harpoon"
         end,
     }
 end)
