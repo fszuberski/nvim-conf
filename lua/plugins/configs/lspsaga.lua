@@ -1,5 +1,9 @@
 local present, saga = pcall(require, "lspsaga")
 
+if not present then
+    return
+end
+
 local options = {
     -- Options with default value
     -- "single" | "double" | "rounded" | "bold" | "plus"

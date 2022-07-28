@@ -85,3 +85,8 @@ nnoremap("gh", "<cmd> Lspsaga lsp_finder <CR>")
 nnoremap("<leader>ca", "<cmd> Lspsaga code_action <CR>")
 nnoremap("<leader>sh", "<cmd> Lspsaga signature_help <CR>")
 nnoremap("<leader>rn", "<cmd> Lspsaga rename <CR>")
+
+-- diffview
+nnoremap("<leader>dvo", "<cmd> DiffviewOpen <CR>")
+nnoremap("<leader>dvc", "<cmd> DiffviewClose <CR>")
+nnoremap("<leader>dvh", "<cmd> DiffviewFileHistory % <CR>")
