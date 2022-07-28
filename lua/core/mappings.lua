@@ -22,6 +22,9 @@ nnoremap("<leader>w", "<cmd> wa <CR>")
 -- delete to void register and paste
 xnoremap("<leader>p", "\"_dP")
 
+-- keep selection after changing indentation
+vnoremap("<", "<gv")
+vnoremap(">", ">gv")
 -- move highlighted text up and own
 vnoremap("J", ":m '>+1<CR>gv=gv")
 vnoremap("K", ":m '<-2<CR>gv=gv")
