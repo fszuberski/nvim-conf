@@ -6,13 +6,14 @@ end
 
 local options = {
     signs                        = {
-        add          = { hl = 'GitSignsAdd', text = '│', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
-        change       = { hl = 'GitSignsChange', text = '│', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
+        add          = { hl = 'GitSignsAdd', text = '▎', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
+        change       = { hl = 'GitSignsChange', text = '▎', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
         delete       = { hl = 'GitSignsDelete', text = '_', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
         topdelete    = { hl = 'GitSignsDelete', text = '‾', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
         changedelete = { hl = 'GitSignsChange', text = '~', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
     },
-    signcolumn                   = true, -- Toggle with `:Gitsigns toggle_signs`
+    -- signcolumn                   = true, -- Toggle with `:Gitsigns toggle_signs`
+    signcolumn                   = false, -- Toggle with `:Gitsigns toggle_signs`
     numhl                        = true, -- Toggle with `:Gitsigns toggle_numhl`
     linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`
     word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`
@@ -29,7 +30,7 @@ local options = {
         ignore_whitespace = false,
     },
     current_line_blame_formatter = '<abbrev_sha> <author> <author_time:%Y-%m-%d %H:%M:%S> - <summary>',
-    sign_priority                = 6,
+    sign_priority                = 10,
     update_debounce              = 100,
     status_formatter             = nil, -- Use default
     max_file_length              = 40000, -- Disable if file is longer than this (in lines)

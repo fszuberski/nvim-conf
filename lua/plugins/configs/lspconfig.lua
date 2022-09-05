@@ -1,6 +1,5 @@
 local present, lspconfig = pcall(require, "lspconfig")
 
-
 if not present then
     return
 end
@@ -10,6 +9,7 @@ require "plugins.configs.mason"
 local servers = { "html", "cssls" }
 
 local M = {}
+
 
 M.on_attach = function(client, bufnr)
     local vim_version = vim.version()
@@ -23,10 +23,6 @@ M.on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = true
         client.resolved_capabilities.document_range_formatting = true
     end
-
-    -- local lsp_mappings = utils.load_config().mappings.lspconfig
-    -- utils.load_mappings({ lsp_mappings }, { buffer = bufnr })
-
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -138,5 +134,26 @@ lspconfig.sumneko_lua.setup {
         },
     },
 }
+
+
+-- setting up signs
+local signs = {
+    Error = " ",
+    Warn = " ",
+    Hint = " ",
+    Info = " "
+}
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    update_in_insert = false,
+    virtual_text = { spacing = 4, prefix = "●" },
+    severity_sort = true,
+})
+
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
 
 return M

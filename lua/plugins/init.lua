@@ -77,6 +77,8 @@ return require('packer').startup(function(use)
         end,
     }
 
+    use { "arkav/lualine-lsp-progress" }
+
     use {
         'akinsho/bufferline.nvim',
         tag = "v2.*",
@@ -85,6 +87,8 @@ return require('packer').startup(function(use)
             require "plugins.configs.bufferline"
         end,
     }
+
+
 
     use {
         'lewis6991/gitsigns.nvim',
@@ -101,6 +105,37 @@ return require('packer').startup(function(use)
             require "plugins.configs.diffview"
         end,
     }
+
+    use {
+        'TimUntersberger/neogit',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'sindrets/diffview.nvim',
+        },
+        config = function()
+            require "plugins.configs.neogit"
+        end,
+    }
+
+    use {
+        'rhysd/conflict-marker.vim'
+    }
+
+    --[[ use {
+        'akinsho/git-conflict.nvim',
+        tag = "*",
+        config = function()
+            require('git-conflict').setup({
+                default_mappings = true, -- disable buffer local mapping created by this plugin
+                disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
+                highlights = { -- They must have background color, otherwise the default color will be used
+                    incoming = 'DiffIncoming',
+                    current = 'DiffCurrent',
+                    ancestor = 'DiffAncestor',
+                }
+            })
+        end
+    } ]]
 
     use {
         'rmagatti/auto-session',
@@ -189,6 +224,14 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- cool lsp status fidget, but using lualine-lsp-progress instead
+    --[[ use {
+        "j-hui/fidget.nvim",
+        config = function()
+            require "plugins.configs.fidget"
+        end,
+    } ]]
+
     use {
         "petertriho/nvim-scrollbar",
         config = function()
@@ -210,4 +253,36 @@ return require('packer').startup(function(use)
             require "plugins.configs.harpoon"
         end,
     }
+
+    use {
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            -- runners: https://github.com/nvim-neotest/neotest#supported-runners
+            'nvim-neotest/neotest-go',
+        },
+        config = function()
+            require "plugins.configs.neotest"
+        end,
+    }
+
+    use {
+        "andythigpen/nvim-coverage",
+        requires = {
+            "nvim-lua/plenary.nvim"
+        },
+        config = function()
+            require "plugins.configs.coverage"
+        end,
+    }
+
+    --[[ use {
+        "Pocco81/auto-save.nvim",
+        config = function()
+            require "plugins.configs.autosave"
+        end,
+    } ]]
+
 end)

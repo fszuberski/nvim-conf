@@ -24,7 +24,8 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
 
-opt.signcolumn = "yes"
+-- opt.signcolumn = "yes"
+opt.signcolumn = "auto:8"
 opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true

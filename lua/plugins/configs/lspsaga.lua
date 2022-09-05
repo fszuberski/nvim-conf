@@ -10,9 +10,12 @@ local options = {
     border_style = "single",
     --the range of 0 for fully opaque window (disabled) to 100 for fully
     --transparent background. Values between 0-30 are typically most useful.
-    saga_winblend = 10,
+    saga_winblend = 0,
     -- when cursor in saga window you config these to move
-    move_in_saga = { prev = '<C-p>', next = '<C-n>' },
+    move_in_saga = {
+        prev = '<Up>',
+        next = '<Down>'
+    },
     -- Error, Warn, Info, Hint
     -- use emoji like
     -- { "🙀", "😿", "😾", "😺" }
@@ -29,7 +32,7 @@ local options = {
     -- add bracket or something with diagnostic source, just have 2 elements
     diagnostic_source_bracket = {},
     -- preview lines of lsp_finder and definition preview
-    max_preview_lines = 20,
+    max_preview_lines = 1000,
     -- use emoji lightbulb in default
     code_action_icon = "💡",
     -- if true can press number to execute the codeaction in codeaction window
@@ -54,8 +57,8 @@ local options = {
         split = "i",
         tabe = "t",
         quit = "<ESC>",
-        scroll_down = "<C-f>",
-        scroll_up = "<C-b>", -- quit can be a table
+        scroll_down = "<C-d>",
+        scroll_up = "<C-u>", -- quit can be a table
     },
     code_action_keys = {
         quit = "<ESC>",
@@ -91,4 +94,4 @@ local options = {
 }
 
 -- use custom config
-saga.init_lsp_saga(options)
+-- saga.init_lsp_saga(options)

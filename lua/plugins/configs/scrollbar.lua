@@ -4,7 +4,7 @@ if not present then
     return
 end
 
-options = {
+local options = {
     show = true,
     show_in_active_only = false,
     set_highlights = true,
