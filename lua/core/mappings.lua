@@ -10,6 +10,7 @@ local diagnostic = vim.diagnostic
 local neotest = require "neotest"
 local coverage = require "coverage"
 local neogit = require "neogit"
+local telescope = require "telescope"
 local dap = require "dap"
 local dapui = require "dapui"
 local dapgo = require "dap-go"
@@ -80,8 +81,7 @@ nnoremap("tD", function() lsp.type_definition() end)
 
 -- telescope
 nnoremap("<C-f>", "<cmd> Telescope current_buffer_fuzzy_find fuzzy=false case_mode=respect_case <CR>")
-nnoremap("<leader>fa", "<cmd> Telescope live_grep fuzzy=false case_mode=respect_case <CR>")
-nnoremap("<leader>fz", "<cmd> Telescope live_grep <CR>")
+nnoremap("<leader>fz", "<cmd> Telescope live_grep fuzzy=false case_mode=respect_case <CR>")
 nnoremap("<leader>fs", "<cmd> Telescope grep_string <CR>")
 nnoremap("<leader>ff", "<cmd> Telescope find_files <CR>")
 nnoremap("<leader>fv", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>")
@@ -89,6 +89,8 @@ nnoremap("<leader>fb", "<cmd> Telescope buffers <CR>")
 nnoremap("<leader>fh", "<cmd> Telescope help_tags <CR>")
 nnoremap("<leader>fo", "<cmd> Telescope oldfiles <CR>")
 nnoremap("<leader>tk", "<cmd> Telescope keymaps <CR>")
+-- telescope live grep args
+nnoremap("<leader>fa", function() telescope.extensions.live_grep_args.live_grep_args() end)
 -- telescope lsp
 nnoremap("gr", "<cmd> Telescope lsp_references <CR>")
 nnoremap("gd", "<cmd> Telescope lsp_definitions <CR>")

@@ -74,9 +74,19 @@ local options = {
             override_file_sorter = true, -- override the file sorter
             case_mode = "smart_case", -- or "ignore_case" or "respect_case"
             -- the default case_mode is "smart_case"
+        },
+        live_grep_args = {
+            auto_quoting = true, -- enable/disable auto-quoting
+            -- override default mappings
+            -- default_mappings = {},
+            mappings = { -- extend mappings
+                i = {
+                    ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
+                }
+            }
         }
     },
-    extensions_list = { "fzf", "dap" },
+    extensions_list = { "fzf", "live_grep_args", "dap" },
 }
 
 telescope.setup(options)
