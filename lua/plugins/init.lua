@@ -50,8 +50,13 @@ return require('packer').startup(function(use)
 
     -- telescope
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { { 'nvim-lua/plenary.nvim' } },
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
+        requires = {
+            {
+                'nvim-lua/plenary.nvim'
+            },
+        },
         cmd = "Telescope",
         config = function()
             require "plugins.configs.telescope"
@@ -77,18 +82,18 @@ return require('packer').startup(function(use)
         end,
     }
 
-    use { "arkav/lualine-lsp-progress" }
-
     use {
+        "arkav/lualine-lsp-progress"
+    }
+
+    --[[ use {
         'akinsho/bufferline.nvim',
         tag = "v2.*",
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
             require "plugins.configs.bufferline"
         end,
-    }
-
-
+    } ]]
 
     use {
         'lewis6991/gitsigns.nvim',
@@ -284,5 +289,39 @@ return require('packer').startup(function(use)
             require "plugins.configs.autosave"
         end,
     } ]]
+
+
+    -- dap
+    use {
+        'mfussenegger/nvim-dap'
+    }
+
+    use {
+        "rcarriga/nvim-dap-ui",
+        requires = {
+            "mfussenegger/nvim-dap"
+        },
+        config = function()
+            require "plugins.configs.dapui"
+        end,
+    }
+
+    use {
+        "theHamsta/nvim-dap-virtual-text",
+        config = function()
+            require "plugins.configs.dapvt"
+        end
+    }
+
+    use {
+        "nvim-telescope/telescope-dap.nvim"
+    }
+
+    use {
+        "leoluz/nvim-dap-go",
+        config = function()
+            require "plugins.configs.dapgo"
+        end,
+    }
 
 end)

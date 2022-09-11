@@ -10,6 +10,9 @@ local diagnostic = vim.diagnostic
 local neotest = require "neotest"
 local coverage = require "coverage"
 local neogit = require "neogit"
+local dap = require "dap"
+local dapui = require "dapui"
+local dapgo = require "dap-go"
 
 -- clear highlight after search
 nnoremap("<ESC>", "<cmd> noh <CR>")
@@ -151,3 +154,17 @@ nnoremap("<leader>ks", function() coverage.summary() end)
 --[[ nnoremap("<leader>cn", "<cmd> GitConflictNextConflict <CR>")
 nnoremap("<leader>cp", "<cmd> GitConflictPrevConflict <CR>")
 nnoremap("<leader>cq", "<cmd> GitConflictListQf <CR>") ]]
+
+-- dap
+nnoremap("<F5>", function() dap.continue() end)
+nnoremap("<F10>", function() dap.step_over() end)
+nnoremap("<F11>", function() dap.step_into() end)
+nnoremap("<F12>", function() dap.step_out() end)
+nnoremap("<leader>db", function() dap.toggle_breakpoint() end)
+nnoremap("<leader>dB", function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
+nnoremap("<leader>dp", function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+nnoremap("<leader>dr", function() dap.repl_open() end)
+nnoremap("<leader>dl", function() dap.run_last() end)
+nnoremap("<leader>do", function() dapui.open() end)
+nnoremap("<leader>dc", function() dapui.close() end)
+nnoremap("<leader>dt", function() dapgo.debug_test() end)

@@ -76,7 +76,7 @@ local options = {
             -- the default case_mode is "smart_case"
         }
     },
-    extensions_list = { "fzf" },
+    extensions_list = { "fzf", "dap" },
 }
 
 telescope.setup(options)
