@@ -130,7 +130,8 @@ nnoremap("<leader>nr", function() neotest.run.run() end)
 nnoremap("<leader>nT",
     function() neotest.run.run({ extra_args = { "-covermode=atomic", "-coverprofile=coverage.out" } }) end)
 nnoremap("<leader>nf", function() neotest.run.run(vim.fn.expand("%")) end)
-nnoremap("<leader>nF", function() neotest.run.run({ vim.fn.expand("%"), extra_args = { "-covermode=atomic", "-coverprofile=coverage.out"}}) end)
+nnoremap("<leader>nF",
+    function() neotest.run.run({ vim.fn.expand("%"), extra_args = { "-covermode=atomic", "-coverprofile=coverage.out" } }) end)
 nnoremap("<leader>nl", function() neotest.run.run_last() end)
 nnoremap("<leader>nL",
     function() neotest.run.run_last({ extra_args = { "-covermode=atomic", "-coverprofile=coverage.out" } }) end)
@@ -158,10 +159,12 @@ nnoremap("<leader>cp", "<cmd> GitConflictPrevConflict <CR>")
 nnoremap("<leader>cq", "<cmd> GitConflictListQf <CR>") ]]
 
 -- dap
-nnoremap("<F5>", function() dap.continue() end)
+nnoremap("<F5>", function() require('dap').continue() end)
+nnoremap("<F9>", function() dap.continue() end)
 nnoremap("<F10>", function() dap.step_over() end)
 nnoremap("<F11>", function() dap.step_into() end)
 nnoremap("<F12>", function() dap.step_out() end)
+nnoremap("<leader>ds", function() dap.terminate() end)
 nnoremap("<leader>db", function() dap.toggle_breakpoint() end)
 nnoremap("<leader>dB", function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
 nnoremap("<leader>dp", function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
