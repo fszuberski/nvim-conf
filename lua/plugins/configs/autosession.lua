@@ -5,8 +5,11 @@ if not present then
 end
 
 local options = {
-    log_level = 'info',
-    auto_session_suppress_dirs = { '~/' }
+    -- log_level = 'info',
+    log_level = 'error',
+    auto_session_suppress_dirs = { '~/' },
 }
+
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 autosession.setup(options)

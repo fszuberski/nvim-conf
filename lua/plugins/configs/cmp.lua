@@ -65,9 +65,9 @@ local options = {
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
-        -- ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        -- ["<Tab>"] = cmp.mapping(function(fallback)
-        ["<CR>"] = cmp.mapping(function(fallback)
+        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ["<Tab>"] = cmp.mapping(function(fallback)
+        -- ["<CR>"] = cmp.mapping(function(fallback)
             -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
             if cmp.visible() then
                 local entry = cmp.get_selected_entry()
@@ -103,7 +103,7 @@ local options = {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
-        { name = "cmdline" },
+        -- { name = "cmdline" },
     },
 }
 

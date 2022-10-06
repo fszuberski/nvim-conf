@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
     -- telescope
     use {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.0',
+        -- tag = '0.1.0', -- https://github.com/nvim-telescope/telescope.nvim/pull/2150
         requires = {
             { 'nvim-lua/plenary.nvim' },
             { "nvim-telescope/telescope-live-grep-args.nvim" },
@@ -142,12 +142,12 @@ return require('packer').startup(function(use)
         end
     } ]]
 
-    use {
+    --[[ use {
         'rmagatti/auto-session',
         config = function()
             require "plugins.configs.autosession"
         end,
-    }
+    } ]]
 
     -- cmp
     use {
@@ -323,5 +323,19 @@ return require('packer').startup(function(use)
             require "plugins.configs.dapgo"
         end,
     }
+
+    -- use({
+    --     "folke/noice.nvim",
+    --     event = "VimEnter",
+    --     config = function()
+    --         require "plugins.configs.noice"
+    --     end,
+    --     requires = {
+    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --         "MunifTanjim/nui.nvim",
+    --         "rcarriga/nvim-notify",
+    --         "hrsh7th/nvim-cmp",
+    --     }
+    -- })
 
 end)

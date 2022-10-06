@@ -66,7 +66,8 @@ nnoremap("<leader>tr", "<cmd> NvimTreeRefresh <CR>")
 
 -- lsp
 nnoremap("gD", function() lsp.declaration() end)
-nnoremap("<leader>fc", function() lsp.formatting() end)
+-- nnoremap("<leader>fc", function() lsp.formatting() end)
+nnoremap("<leader>fc", function() lsp.format { async = true } end)
 nnoremap("<leader>sd", function() diagnostic.open_float() end)
 -- remaps overridden by lspsaga
 -- nnoremap("K", function() lsp.hover() end)
